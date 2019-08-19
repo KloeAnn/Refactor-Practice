@@ -212,6 +212,60 @@ public class GildedRoseTest {
     }
 
     @Test
+    public void test_updateQuality_when_item_name_is_Backstage_passes_to_a_TAFKAL80ETC_concert_and_sellin_is_1_and_quality_is_48(){
+        Item item=new Item("Backstage passes to a TAFKAL80ETC concert",1,48);
+        Item[]items={item};
+        GildedRose gildedRose=new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        int actualSellIn=gildedRose.items[0].sellIn;
+        int actualQuality=gildedRose.items[0].quality;
+
+        int expectedSellIn=0;
+        int expectedQuality=50;
+
+        assertEquals(expectedQuality,actualQuality);
+        assertEquals(expectedSellIn,actualSellIn);
+    }
+
+    @Test
+    public void test_updateQuality_when_item_name_is_Backstage_passes_to_a_TAFKAL80ETC_concert_and_sellin_is_6_and_quality_is_47(){
+        Item item=new Item("Backstage passes to a TAFKAL80ETC concert",6,47);
+        Item[]items={item};
+        GildedRose gildedRose=new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        int actualSellIn=gildedRose.items[0].sellIn;
+        int actualQuality=gildedRose.items[0].quality;
+
+        int expectedSellIn=5;
+        int expectedQuality=49;
+
+        assertEquals(expectedQuality,actualQuality);
+        assertEquals(expectedSellIn,actualSellIn);
+    }
+
+    @Test
+    public void test_updateQuality_when_item_name_is_Backstage_passes_to_a_TAFKAL80ETC_concert_and_sellin_is_5_and_quality_is_47(){
+        Item item=new Item("Backstage passes to a TAFKAL80ETC concert",5,47);
+        Item[]items={item};
+        GildedRose gildedRose=new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        int actualSellIn=gildedRose.items[0].sellIn;
+        int actualQuality=gildedRose.items[0].quality;
+
+        int expectedSellIn=4;
+        int expectedQuality=50;
+
+        assertEquals(expectedQuality,actualQuality);
+        assertEquals(expectedSellIn,actualSellIn);
+    }
+
+    @Test
     public void test_updateQuality_when_item_name_is_Backstage_passes_to_a_TAFKAL80ETC_concert_and_sellin_is_11_and_quality_is_48(){
         Item item=new Item("Backstage passes to a TAFKAL80ETC concert",11,48);
         Item[]items={item};
